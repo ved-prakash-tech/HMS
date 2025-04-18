@@ -14,7 +14,8 @@ class AdminController extends Controller
             $usertype = Auth::user()->usertype;
 
             if ($usertype == 'user') {
-                return view('dashboard');
+              $room = Room::all();
+                return view('home.index', compact('room'));
             } elseif ($usertype == 'admin') {
                 return view('admin.index');
             } else {
@@ -27,7 +28,8 @@ class AdminController extends Controller
 
     public function home()
      {
-        return view('home.index');
+      $room = Room::all();
+        return view('home.index', compact('room'));
      }
 
      public function create_room()
@@ -46,7 +48,7 @@ class AdminController extends Controller
          $image = $request->image;
          if($image)
          {
-            $imagename = time().'.'.$image->getClientOriginalExtension();
+            $imagename =~ time().'.'.$image->getClientOriginalExtension();
             $request->image->move('room', $imagename);
 
             $data->image = $imagename;
@@ -97,4 +99,4 @@ class AdminController extends Controller
         return redirect()->back();
       }
 
-    }
+  }
