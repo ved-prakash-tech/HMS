@@ -3,6 +3,13 @@
    <head>
     <base href="/public">
   @include('home.css')
+
+  <style>
+   label{
+      display: inline-block;
+      width: 100%;
+   }
+  </style>
    </head>
    <!-- body -->
    <body class="main-layout">
@@ -47,9 +54,51 @@
                   </div>
                </div>
             </div>
-           
-      
+            
+
+         <div class="col-md-4">
+            <h1><b>Book Room</b></h1>
+          
+            @if ($errors)
+
+            @foreach ($errors->all() as $errors)
+                <li style="color: red">{{$errors}}</li>
+            @endforeach
+                
+            @endif
+
+            <form action="{{url('add_booking', $room->id)}}" method="post">
+               @csrf
+            <div>
+               <label>Name</label>
+               <input type="text" name="name"
+               @if(Auth::id())
+                value="{{Auth::user()->name}}">
+                @endif
             </div>
+            <div>
+               <label>Email</label>
+               <input type="email" name="email" value="{{Auth::user()->email}}">
+            </div>
+            <div>
+               <label>Phone</label>
+               <input type="number" name="phone" value="{{Auth::user()->phone}}">
+            </div>
+            <div>
+               <label>Start Date</label>
+               <input type="date" name="startDate" id="startDate">
+            </div>
+            <div>
+               <label>End Date</label>
+               <input type="date" name="endDate" id="endDate">
+            </div>
+            <div>
+               <input type="submit" class="btn btn-primary mt-2" name="submit">
+            </div>
+         </div>
+         </form>
+
+        </div>
         </div>
       </div>
        <!-- end header -->
@@ -64,5 +113,24 @@
       <!-- sidebar -->
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script>
+
+
+       <!-- for choosing only current and future dates -->
+      <script>
+         $(function() {
+         var dtToday = new Date();
+         var month = dtToday.getMonth() + 1;
+         var day = dtToday.getDate();
+         var year = dtToday.getFullYear();
+         if (month < 10)
+         month = '0' + month;
+         if (day < 10)
+         day = '0' + day;
+         var today = year + '-' + month + '-' + day;
+         $('#startDate').attr('min', today);
+         $('#endDate').attr('min', today);
+         
+         });
+         </script>
    </body>
 </html>

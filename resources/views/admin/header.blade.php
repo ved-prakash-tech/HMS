@@ -134,13 +134,17 @@
        
         <!-- Log out               -->
         <div class="list-inline-item logout">
-          <form method="POST" action="{{ route('logout') }}" x-data>
+          {{-- <form method="POST" action="{{ route('logout') }}" x-data>
               @csrf
-              <button type="submit" class="dropdown-item text-danger">
+              {{-- <button type="submit" class="dropdown-item text-danger">
                   {{ __('Log Out') }}
-              </button>
-          </form>
-      </div>
+              </button> --}}
+
+          {{-- </form> --}} 
+        
+          <x-app-layout>
+
+          </x-app-layout>
       
           
         </div>
