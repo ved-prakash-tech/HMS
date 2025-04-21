@@ -93,7 +93,7 @@
                <label>Phone</label>
                <input type="number" name="phone"  @if (Auth::id())  
                value="{{Auth::user()->phone}}">
-               @endif>
+               @endif
             </div>
             <div>
                <label>Start Date</label>
