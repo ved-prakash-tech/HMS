@@ -3,7 +3,7 @@
    <head>
     <base href="/public">
   @include('home.css')
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
   <style>
    label{
       display: inline-block;
@@ -58,6 +58,12 @@
 
          <div class="col-md-4">
             <h1><b>Book Room</b></h1>
+            @if (session()->has('message'))
+                <div class="alert alert-success" role="alert">
+                  <button type="button" class="close" data-bs-dismiss="alert">X</button>
+                {{session()->get('message')}}
+                </div>
+            @endif
           
             @if ($errors)
 
@@ -78,11 +84,16 @@
             </div>
             <div>
                <label>Email</label>
-               <input type="email" name="email" value="{{Auth::user()->email}}">
+               <input type="email" name="email" 
+               @if (Auth::id())  
+               value="{{Auth::user()->email}}">
+               @endif
             </div>
             <div>
                <label>Phone</label>
-               <input type="number" name="phone" value="{{Auth::user()->phone}}">
+               <input type="number" name="phone"  @if (Auth::id())  
+               value="{{Auth::user()->phone}}">
+               @endif>
             </div>
             <div>
                <label>Start Date</label>
@@ -93,7 +104,7 @@
                <input type="date" name="endDate" id="endDate">
             </div>
             <div>
-               <input type="submit" class="btn btn-primary mt-2" name="submit">
+               <input type="submit" class="btn btn-primary mt-2" value="Book Room" name="submit">
             </div>
          </div>
          </form>
@@ -113,6 +124,7 @@
       <!-- sidebar -->
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 
 
        <!-- for choosing only current and future dates -->
