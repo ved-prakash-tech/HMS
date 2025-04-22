@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Room;
+use App\Models\Booking;
 
 class AdminController extends Controller
 {
@@ -96,6 +97,19 @@ class AdminController extends Controller
          }
 
         $data->save();
+        return redirect()->back();
+      }
+
+      public function bookings()
+      {
+        $data = Booking::all();
+        return view('admin.booking', compact('data'));
+      }
+
+      public function delete_booking($id)
+      {
+        $data = Booking::find($id);
+        $data->delete();
         return redirect()->back();
       }
 
