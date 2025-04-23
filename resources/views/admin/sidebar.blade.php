@@ -24,6 +24,9 @@
       </li>
       <li><a href="{{url('bookings')}}"> <i class="icon-home"></i>Bookings </a></li>
       <li>
+
+      <li><a href="{{url('view_gallery')}}"> <i class="icon-home"></i>Gallery </a></li>
+      <li>
     </ul>
   </nav>
   <!-- Main content would go here -->

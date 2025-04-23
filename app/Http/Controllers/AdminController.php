@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Room;
 use App\Models\Booking;
+use App\Models\Gallery;
 
 class AdminController extends Controller
 {
@@ -29,8 +30,9 @@ class AdminController extends Controller
 
     public function home()
      {
-      $room = Room::all();
-        return view('home.index', compact('room'));
+        $room = Room::all();
+        $gallery = Gallery::all();
+        return view('home.index', compact('room', 'gallery'));
      }
 
      public function create_room()
@@ -111,6 +113,49 @@ class AdminController extends Controller
         $data = Booking::find($id);
         $data->delete();
         return redirect()->back();
+      }
+
+      public function approve_book($id)
+      {
+        $booking = Booking::find($id);
+        $booking->status = 'Approve';
+        $booking->save();
+        return redirect()->back();
+      }
+
+      public function reject_book($id)
+      {
+        $booking = Booking::find($id);
+        $booking->status = 'Rejected';
+        $booking->save();
+        return redirect()->back();
+      }
+
+      public function view_gallery()
+      {
+        $gallery = Gallery::all();
+        return view('admin.gallery', compact('gallery'));
+      }
+
+      public function upload_gallery(Request $request)
+      {
+        $data = new Gallery;
+        $image = $request->image;
+        if($image)
+        {
+          $imagename = time().'.'.$image->getClientOriginalExtension();
+          $request->image->move('gallery', $imagename);
+          $data->image = $imagename;
+          $data->save();
+          return redirect()->back();
+        }
+      }
+
+      public function delete_gallery($id)
+      {
+         $data = Gallery::find($id);
+         $data->delete();
+         return redirect()->back();
       }
 
   }
