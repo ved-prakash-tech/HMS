@@ -4,18 +4,36 @@
    @include('admin.css');
   </head>
   <style>
-    .table_deg{
-      border: 2px solid white;
-      margin: auto;
-      width: 75%;
-      text-align: center;
-    }
-    table,th, tr {
-      border: 2px solid white;
-    }
-    .th_deg {
-      background-color: rgb(72, 214, 37);
-    }
+   <style>
+  .table_deg {
+    border: 2px solid white;
+    margin: auto;
+    width: 90%;
+    text-align: center;
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+
+  table, th, td {
+    border: 2px solid white;
+  }
+
+  .th_deg {
+    background-color: rgb(240, 216, 36);
+  }
+
+  .table_deg th, .table_deg td {
+    padding: 10px;
+    word-wrap: break-word;
+  }
+
+  .table_deg img {
+    width: 80px;
+    height: 50px;
+    object-fit: cover;
+  }
+</style>
+
   </style>
   <body>
     @include('admin.header');
@@ -73,9 +91,9 @@
              </td>
              <td>
               <span style="padding-bottom: 10px">
-              <a href="{{url('approve_book', $data->id)}}" class="btn btn-success">Approve</a>
+              <a href="{{url('approve_book', $data->id)}}" class="btn btn-success m-2">Approve</a>
             </span>
-              <a href="{{url('reject_book', $data->id)}}" class="btn btn-warning">Rejected</a>
+              <a href="{{url('reject_book', $data->id)}}" class="btn btn-warning m-2">Rejected</a>
              </td>
             
              

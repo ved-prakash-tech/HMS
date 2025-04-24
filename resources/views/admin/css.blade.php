@@ -15,7 +15,7 @@
 <!-- theme stylesheet-->
 <link rel="stylesheet" href="admin/css/style.default.css" id="theme-stylesheet">
 <!-- Custom stylesheet - for your changes-->
-<link rel="stylesheet" href="admin/css/custom.css">
+<link rel="stylesheet" href=" admin/css/custom.css">
 <!-- Favicon-->
 <link rel="shortcut icon" href="admin/img/favicon.ico">
 <!-- Tweaks for older IEs--><!--[if lt IE 9]>
