@@ -21,11 +21,11 @@
                      <li class="nav-item active">
                         <a class="nav-link" href="{{ url('/') }}">Home</a>
                      </li>
-                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                     <li class="nav-item"><a class="nav-link" href="room.html">Our room</a></li>
-                     <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{{url('route_about')}}">About</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{{url('our_rooms')}}">Our room</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{{url('hotel_gallery')}}">Gallery</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{{url('route_blog')}}">Blog</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{{url('contact_us')}}">Contact Us</a></li>
 
                      @guest
                         <!-- Show login/register if user is not logged in -->
@@ -33,7 +33,7 @@
                            <a class="btn btn-success mx-1" href="{{ url('login') }}">Login</a>
                         </li>
                         <li class="nav-item">
-                           <a class="btn btn-success mx-1" href="{{ url('register') }}">Register</a>
+                           <a class="btn btn-primary mx-1" href="{{ url('register') }}">Register</a>
                         </li>
                      @endguest
 

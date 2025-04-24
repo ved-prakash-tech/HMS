@@ -16,43 +16,16 @@
   @include('home.header');
       </header>
        <!-- end header -->
-      <!-- banner -->
-     @include('home.slider');
-      <!-- end banner -->
-      <!-- about -->
-     @include('home.about');
-      <!-- end about -->
-      <!-- our_room -->
-      @include('home.room');
-      <!-- end our_room -->
+   
       <!-- gallery -->
      @include('home.gallery');
       <!-- end gallery -->
-      <!-- blog -->
-    @include('home.blog');
-      <!-- end blog -->
-      <!--  contact -->
-    @include('home.contact');
-      <!-- end contact -->
+ 
       <!--  footer -->
     @include('home.footer');
       <!-- end footer -->
       <!-- Javascript files-->
-      <script>
-        // Save scroll position before form submits
-        document.getElementById("request").addEventListener("submit", function () {
-          localStorage.setItem("scrollPosition", window.scrollY);
-        });
-      
-        // When page loads, scroll to the saved position (if any)
-        window.onload = function () {
-          const scrollPosition = localStorage.getItem("scrollPosition");
-          if (scrollPosition) {
-            window.scrollTo(0, scrollPosition);
-            localStorage.removeItem("scrollPosition"); // Remove it so it doesn't trigger again on future loads
-          }
-        }
-      </script>
+    
       
       <script src="js/jquery.min.js"></script>
       <script src="js/bootstrap.bundle.min.js"></script>
