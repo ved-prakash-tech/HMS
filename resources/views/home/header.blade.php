@@ -1,4 +1,3 @@
-<!-- header -->
 <div class="header">
    <div class="container">
       <div class="row">
@@ -6,7 +5,9 @@
             <div class="full">
                <div class="center-desk">
                   <div class="logo">
-                     <a href="{{ url('/') }}"><img src="images/logo.png" alt="#" /></a>
+                     <a href="{{ url('/') }}">
+                        <img src="https://cdn.logojoy.com/wp-content/uploads/20230607113820/marriott-hotel-logo.png" alt="#" class="img-fluid" style="max-height: 90px;">
+                     </a>
                   </div>
                </div>
             </div>

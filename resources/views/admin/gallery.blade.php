@@ -16,7 +16,7 @@
         <h1 class="text-center text-white mb-5 fw-bold display-5">📸 Gallery</h1>
 
         <div class="row g-4 mb-5">
-          @foreach ($gallery as $item)
+          @foreach ($gallery as  $item)
             <div class="col-12 col-md-4">
               <div class="card shadow-sm h-90">
                 <img src="/gallery/{{$item->image}}" alt="Gallery Image" class="card-img-top" style="height: 180px; object-fit: cover;">

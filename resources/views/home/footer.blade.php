@@ -41,11 +41,12 @@
            <div class="row">
               <div class="col-md-10 offset-md-1">
                  
-                 <p>
-                 © 2019 All Rights Reserved. Design by <a href="https://html.design/"> Free Html Templates</a>
-                 <br><br>
-                 Distributed by <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
-                 </p>
+               <p>
+                  © 2025 All Rights Reserved. Designed by <strong>Marriott Hotel</strong>
+                  <br><br>
+                  Powered by <a href="" target="_blank">Marriott International</a>
+               </p>
+               
 
               </div>
            </div>
