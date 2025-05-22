@@ -70,18 +70,18 @@
         <!-- Languages dropdown    -->
        
         <!-- Log out               -->
-        <div class="list-inline-item logout">
-          {{-- <form method="POST" action="{{ route('logout') }}" x-data>
+        <div class="list-inline-item logout text-3xl">
+           <form method="POST" action="{{ route('logout') }}" x-data>
               @csrf
-              {{-- <button type="submit" class="dropdown-item text-danger">
+              <button type="submit" class="dropdown-item text-danger ">
                   {{ __('Log Out') }}
-              </button> --}}
+              </button>
 
-          {{-- </form> --}} 
+          </form> 
         
-          <x-app-layout>
+          {{-- <x-app-layout>
 
-          </x-app-layout>
+          </x-app-layout> --}}
       
           
         </div>

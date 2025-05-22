@@ -1,11 +1,11 @@
 <footer class="footer">
   <div class="footer__block block no-margin-bottom">
     <div class="container-fluid text-center">
-      <p>
+      {{-- <p>
         © 2025 All Rights Reserved. Designed by <strong>Marriott Hotel</strong>
         <br><br>
         Powered by <a href="" target="_blank">Marriott International</a>
-     </p>
+     </p> --}}
     </div>
   </div>
 </footer>
